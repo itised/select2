@@ -933,6 +933,7 @@ the specific language governing permissions and limitations under the Apache Lic
                             }
                         } else if (element.is("optgroup")) {
                             group=self.optionToData(element);
+                            if (element.attr("value")) { group.id=element.attr("value"); }
                             element.children().each2(function(i, elm) { process(elm, group.children); });
                             if (group.children.length>0) {
                                 collection.push(group);
